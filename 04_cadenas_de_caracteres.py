@@ -34,3 +34,52 @@ c = "platano"
 letra = c[0]
 print(letra)
 
+#conversion a mayusculas
+TEXTO = texto.upper()
+print(TEXTO)
+
+#conversion a minusculas
+minus = texto.lower()
+print(minus)
+
+#reemplazo subcadena
+print(texto)
+new_text = texto.replace("suma", "adicion")
+print(new_text)
+
+#division de cadenas
+cadena = "tenemos que la adicion es igual a la adicion más el valor"
+print(cadena.split(None, 5))
+
+#union de cadenas
+empleados = ["Juan Botas", "Luis Campos", "Pedro Botero", "Jesus Gracias"]
+print(empleados)
+union = " - ".join(empleados)
+print(union)
+
+#interpolacion de cadenas
+nombre = "Luis"
+edad = 45
+print(f"El señor {nombre} tiene {edad} años.")
+
+#verificacion de cadenas
+cadena_alfanum = "Estoyenelnumero768"
+cadena_alpha = "Estaesunacadenaalfabetica"
+cadena_num = "456789"
+
+if cadena_alfanum.isalnum():
+    print(f"La cadena {cadena_alfanum} es alphanumerica.")
+else:
+    print(f"La cadena {cadena_alfanum} no es alphanumerica.")
+
+if cadena_alpha.isalpha():
+    print(f"La cadena {cadena_alpha} es alfabetica.")
+else:
+    print(f"La cadena {cadena_alpha} no es alphanumerica.")
+
+if cadena_num.isdigit():
+    print(f"La cadena {cadena_num} es numerica.")
+else:
+    print(f"La cadena {cadena_num} no es numerica.")
+
+
