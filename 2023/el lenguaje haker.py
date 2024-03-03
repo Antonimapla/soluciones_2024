@@ -17,25 +17,31 @@ def crearListaLetras(textominus):
     return textolistletras
 
 def traducirTexto(textolistletras):
-    textolistletra = len(textolistletras)
+    finaldict = dict()
+    #textolistletra = len(textolistletras)
     leetD = len(leetDict)
-    
+    print(texto)
+    x = 0
     for letra in textolistletras:
         for signo in leetDict:
             if signo == letra:
                 leet.append(signo)
-                print(leetDict[signo])
+                print(letra, leetDict[signo])
+                finaldict[letra] = leetDict[signo]
+                x += 1
+                if x == leetD:
+                    print(finaldict)
                 break
-                           
-    
-texto = ("Hace dos horas, cuando todo comenzó, la gente no gritaba\
+        
+     
+texto = ("Hace dos horas, cuando todo comenzo, la gente no gritaba\
 Nadie levantaba los puños, ni cerraba los ojos, ni miraba el escenario\
-con arrobo. Hace dos horas todos hacían un ensayo general de histeria de\
-bajo voltaje allá en la calle, cuando ellos cinco gafas oscuras, pantalones\
+con arrobo. Hace dos horas todos hacian un ensayo general de histeria de\
+bajo voltaje alla en la calle, cuando ellos cinco gafas oscuras, pantalones\
 de cuero bajaban de la limusina alquilada, polarizada, vieja, entre el humo\
 de los chorizos que se asaban en los puestos callejeros. Hace dos horas, cuando\
-todo comenzó, la gente aplaudía un poco, y nada más. La gente gritaba un poco, y nada\
-más. La gente bailaba un poco, y nada más")
+todo comenzo, la gente aplaudia un poco, y nada mas. La gente gritaba un poco, y nada\
+mas. La gente bailaba un poco, y nada mas")
 
 leetDict = {
     "a":"4",
@@ -67,6 +73,7 @@ leetDict = {
 }
 
 leet = []
+
 
 textominus = convertidorMinus(texto)
 
