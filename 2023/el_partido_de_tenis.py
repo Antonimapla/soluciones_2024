@@ -31,21 +31,14 @@ p2 = 0
 bola = True
 marca1 = ""
 marca2 = ""
+puntos1 = ["love", "15", "30", "40", "deuce", "ventaja", "winner"]
+puntos2 = ["love", "15", "30", "40", "deuce", "ventaja", "winner"]
 
-
-while bola == True:
-
-    #def ganador_pset():
-    ganador = input("Introduzca jugador ganador p1 - p2: ")
-        #return ganador
+while bola:
     
-    p1p2 = ganador
-
-    def reset_contadores():
-        puntos_P1 = 0
-        puntos_P2 = 0
-
-    
+    def ganador_pset():
+        ganador = input("Introduzca jugador ganador p1 - p2: ")
+        return ganador
     
     def progreso_juego(p1p2):
         if p1p2 == p1:
@@ -56,12 +49,8 @@ while bola == True:
             puntos_P2 += 1
             marcador(puntos_P2)
 
-    progreso_juego(p1p2)
-
     def marcador(p1p2):
-        puntos1 = ["love", "15", "30", "40", "deuce", "ventaja", "winner"]
-        puntos2 = ["love", "15", "30", "40", "deuce", "ventaja", "winner"]
-
+        print(p1p2)
         if puntos_P1 == 1:
             marca1 = "love"
         elif puntos_P1 == 2:
@@ -91,19 +80,22 @@ while bola == True:
                 marca2 = "ventaja"
             elif puntos_P2 == 7:
                 marca2 = "winner"
-
-        print(f"Resultado provisional del partido jugador1 {marca1}")
-        print(f"Resultado provisional del partido jugador2 {marca2}")
-
+            
+    print(f"Resultado provisional del partido jugador1:{marca1}")
+    print(f"Resultado provisional del partido jugador2:{marca2}")
     
     if marca1 or marca2== "winner":
-       reset_contadores()
-       bola = False        
+        bola = 1
+               
+    p1p2 = ganador_pset()
+    
+    progreso_juego(p1p2)
 
-
-
-
-
+    def reset_contadores():
+        puntos_P1 = 0
+        puntos_P2 = 0
+p
+    
         
     
     
