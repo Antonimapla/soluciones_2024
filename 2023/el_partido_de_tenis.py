@@ -1,4 +1,4 @@
-
+import time
 
 """
 .Escribe un programa que muestre cómo transcurre un juego de tenis y quién lo ha ganado.
@@ -17,36 +17,75 @@
  * - Si quieres, puedes controlar errores en la entrada de datos.   
  * - Consulta las reglas del juego si tienes dudas sobre el sistema de puntos.
 """
+class Tenis:
+    #simulacion de una partida de tenis
+    def __init__(self) -> None:
+        self.puntos = ["love", "15", "30", "40", "deuce", "ventaja", "winner"]
+        self.jugada = 0
+        self.puntos_P1 = 0
+        self.puntos_P2 = 0
+        self.ganador = ""
+        self.jugador_1 = 0
+        self.jugador_2 = 0 
+        self.tennis = Tenis
+        
+    def partido(self):
+        self.jugada += 1
+        self.ganador = input(f"Introduce ganador de la {self.jugada}: ")
+        puntuacion(self, ganador)
 
-puntos = 0
-puntos_P1 = 0
-puntos_P2 = 0
-juego = 0
-pset = 0
-#ganador = 
-puntos1 = ["love", "15", "30", "40", "deuce", "ventaja", "winner"]
-puntos2 = ["love", "15", "30", "40", "deuce", "ventaja", "winner"]
-p1 = 0
-p2 = 0
-bola = True
-marca1 = ""
-marca2 = ""
-puntos1 = ["love", "15", "30", "40", "deuce", "ventaja", "winner"]
-puntos2 = ["love", "15", "30", "40", "deuce", "ventaja", "winner"]
 
-while bola:
+
+    def puntuacion(self, ganador):
+        if self.ganador == self.jugador_1:
+            self.puntos_P1 += 1
+            marcador_jugador_1(self, self.puntos_P1)
+        else:
+            self.puntos_P2 += 1
+            marcador_jugador_2(self, self.puntos_P2)
+
+
+    
+    def marcador_jugador_1(self, puntos):
+        for i in puntos:
+            if puntos[i] == self.puntos_P1:
+                print(f"Puntuacion jugador 1: {puntos[i]}")
+    
+
+    def marcador_jugador_2(self, puntos):
+        for i in puntos:
+            if puntos[i] == self.puntos_P2:
+                print(f"Puntuacion jugador 2: {puntos[i]}")
+    
+    tennis.partido(jugada)
+
+tennis = Tenis
+        
+
+
+
+
+
+    
+    
+"""
+for i in range(1, 5):
     
     def ganador_pset():
         ganador = input("Introduzca jugador ganador p1 - p2: ")
-        return ganador
-    
+        print(ganador)
+        p1p2 = ganador
+        progreso_juego(p1p2)
+
     def progreso_juego(p1p2):
         if p1p2 == p1:
             puntos_P1 += 1
+            print(puntos_P1)
             marcador(puntos_P1)
 
         elif p1p2 == p2:
             puntos_P2 += 1
+            time.sleep(5)
             marcador(puntos_P2)
 
     def marcador(p1p2):
@@ -85,17 +124,23 @@ while bola:
     print(f"Resultado provisional del partido jugador2:{marca2}")
     
     if marca1 or marca2== "winner":
-        bola = 1
-               
-    p1p2 = ganador_pset()
-    
-    progreso_juego(p1p2)
+        bola += 1
+        if marca1 == "winner":
+            print("El ganador es: Jugador 1")
+        else:
+            print("El ganador es: Jugador 2")
 
-    def reset_contadores():
+                       
+ganador_pset()
+  
+progreso_juego(p1p2)
+
+def reset_contadores():
         puntos_P1 = 0
         puntos_P2 = 0
-p
-    
+
+exit()    
         
     
     
+"""
