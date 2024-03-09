@@ -1,4 +1,4 @@
-import time
+
 
 """
 .Escribe un programa que muestre cómo transcurre un juego de tenis y quién lo ha ganado.
@@ -17,108 +17,102 @@ import time
  * - Si quieres, puedes controlar errores en la entrada de datos.   
  * - Consulta las reglas del juego si tienes dudas sobre el sistema de puntos.
 """
-class Tenis:
-    #simulacion de una partida de tenis
-    def __init__(self) -> None:
-        self.puntos = ["love", "15", "30", "40", "deuce", "ventaja", "winner"]
-        self.jugada = 0
-        self.puntos_P1 = 0
-        self.puntos_P2 = 0
-        self.ganador = ""
-        self.jugador_1 = 0
-        self.jugador_2 = 0 
-        self.tennis = Tenis
+puntos = {}
+
+jugador_1 = 0
+jugador_2 = 0 
+dato = 0
+ganador = ""
+dato = 1    
+p1 = ""
+p2 = ""
+marca1 = 0
+marca2 = 0
+jugada = 0
+            
+
+def puntuacion(jugador):
+    if jugador == p1:
+        jugador_1 + 1
+        marcador1(jugador_1)
+    else:
+        jugador_2 = jugador_2 + 1
+        marcador2(jugador_2)
+
+
+
+def diccio(ganador, jugada):
+    puntos[jugada] = ganador 
+    if ganador == p1:
+        puntuacion(p1)
+    else:
+        puntuacion(p2)
+
+
         
-    def partido(self):
-        self.jugada += 1
-        self.ganador = input(f"Introduce ganador de la {self.jugada}: ")
-        puntuacion(self, ganador)
+def entrada_datos(jugada):
+    jugada += 1
+    ganador = input(f"Introduzca jugador ganador (p1 o p2) de la jugada {jugada}:")
+    print(jugada)
+    diccio(ganador, jugada)
 
 
+def marcador1(jugador_1):
+    puntos_P1 = jugador_1
+    if puntos_P1 == 1:
+        marca1 = "love"
+    elif puntos_P1 == 2:
+        marca1 = "15"
+    elif puntos_P1 == 3:
+        marca1 = "30"
+    elif puntos_P1 == 4:
+        marca1 = "40"
+    elif puntos_P1 == 5:
+        marca1 = "deuce"
+    elif puntos_P1 == 6:
+        marca1 = "ventaja"
+    elif puntos_P1 == 7:
+        marca1 = "winner"
 
-    def puntuacion(self, ganador):
-        if self.ganador == self.jugador_1:
-            self.puntos_P1 += 1
-            marcador_jugador_1(self, self.puntos_P1)
-        else:
-            self.puntos_P2 += 1
-            marcador_jugador_2(self, self.puntos_P2)
+    print(f"jugador 1: {marca1}")        
 
+def marcador2(jugador_2):
+    puntos_P2 = jugador_2
+    if puntos_P2 == 1:
+        marca2 = "love"
+    elif puntos_P2 == 2:
+        marca2 = "15"
+    elif puntos_P2 == 3:
+        marca2= "30"
+    elif puntos_P2 == 4:
+        marca2 = "40"
+    elif puntos_P2 == 5:
+        marca2 = "deuce"
+    elif puntos_P2 == 6:
+        marca2 = "ventaja"
+    elif puntos_P2 == 7:
+        marca2 = "winner"
+
+    print(f"jugador 2: {marca2}")
+
+x = 16      
+while x > 0:
+    entrada_datos(jugada)
+    x -= 1
 
     
-    def marcador_jugador_1(self, puntos):
-        for i in puntos:
-            if puntos[i] == self.puntos_P1:
-                print(f"Puntuacion jugador 1: {puntos[i]}")
+    
+    
     
 
-    def marcador_jugador_2(self, puntos):
-        for i in puntos:
-            if puntos[i] == self.puntos_P2:
-                print(f"Puntuacion jugador 2: {puntos[i]}")
-    
-    tennis.partido(jugada)
-
-tennis = Tenis
-        
-
-
-
-
-
-    
     
 """
-for i in range(1, 5):
     
-    def ganador_pset():
-        ganador = input("Introduzca jugador ganador p1 - p2: ")
-        print(ganador)
-        p1p2 = ganador
-        progreso_juego(p1p2)
-
-    def progreso_juego(p1p2):
-        if p1p2 == p1:
-            puntos_P1 += 1
-            print(puntos_P1)
-            marcador(puntos_P1)
-
-        elif p1p2 == p2:
-            puntos_P2 += 1
-            time.sleep(5)
-            marcador(puntos_P2)
-
     def marcador(p1p2):
         print(p1p2)
-        if puntos_P1 == 1:
-            marca1 = "love"
-        elif puntos_P1 == 2:
-            marca1 = "15"
-        elif puntos_P1 == 3:
-            marca1 = "30"
-        elif puntos_P1 == 4:
-            marca1 = "40"
-        elif puntos_P1 == 5:
-            marca1 = "deuce"
-        elif puntos_P1 == 6:
-            marca1 = "ventaja"
-        elif puntos_P1 == 7:
-            marca1 = "winner"
+        
         else: 
-            if puntos_P2 == 1:
-                marca2 = "love"
-            elif puntos_P2 == 2:
-                marca2 = "15"
-            elif puntos_P2 == 3:
-                marca2= "30"
-            elif puntos_P2 == 4:
-                marca2 = "40"
-            elif puntos_P2 == 5:
-                marca2 = "deuce"
-            elif puntos_P2 == 6:
-                marca2 = "ventaja"
-            elif puntos_P2 == 7:
-                marca2 = "winner"
+            
             
     print(f"Resultado provisional del partido jugador1:{marca1}")
     print(f"Resultado provisional del partido jugador2:{marca2}")
