@@ -77,7 +77,7 @@ def marcador1(jugador_1, jugador_2):
     elif puntos_P1 == 6:
         marca1 = "winner"
 
-    #print(f"jugador 1: {marca1}")        
+           
     imprimir_puntuacion(marca1, marca2)
     if marca1 == "winner":
         exit()
@@ -101,7 +101,7 @@ def marcador2(jugador_2, jugador_1):
         marca2 = "winner"
         
     imprimir_puntuacion(marca1, marca2)
-    #print(f"jugador 2: {marca2}")
+    
     if marca2 == "winner":
         exit()
 
@@ -125,35 +125,3 @@ print(puntos)
     
 
     
-"""
-    
-    def marcador(p1p2):
-        print(p1p2)
-        
-        else: 
-            
-            
-    print(f"Resultado provisional del partido jugador1:{marca1}")
-    print(f"Resultado provisional del partido jugador2:{marca2}")
-    
-    if marca1 or marca2== "winner":
-        bola += 1
-        if marca1 == "winner":
-            print("El ganador es: Jugador 1")
-        else:
-            print("El ganador es: Jugador 2")
-
-                       
-ganador_pset()
-  
-progreso_juego(p1p2)
-
-def reset_contadores():
-        puntos_P1 = 0
-        puntos_P2 = 0
-
-exit()    
-        
-    
-    
-"""
